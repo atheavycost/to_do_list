@@ -1,56 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const Todolist = () => {
-
-    const items = ['gang', 'bang', 'drink coffee'];
-
-    return (        
-    <ul>
-        <li>{ items[0] }</li>
-        <li>{ items[1] }</li>
-        <li>{ items[2] }</li>
-    </ul>
-    );
-};
-
-const Appheader = () => {
-    return (
-        <h1> My todo list</h1>
-);};
-
-const SearchPanel = () => {
-    
-    const SearchText = 'Type here to search text';
-    const searchStyle = {
-        fontSize: '20px'
-    };
-    return ( <input 
-        style={searchStyle}
-        placeholder={SearchText} />
-    );
-};
+import AppHeader from './components/app-header';
+import TodoList from './components/todo-list';
+import SearchPanel from './components/search-panel';
+import TodoListItem from './components/todo-list-item';
 
 const App = () => {
     
-    const isLoggedIn = true;
-    const welcomBox = <span>Welcome Back</span>
-    const loginBox = <span>log in, please!</span>; 
-    
     return (
         <div>
-            { isLoggedIn ? welcomBox : loginBox }
-            {/* { loginBox } */}
-            <Appheader />
+            <AppHeader />
             <SearchPanel />
-            <Todolist />
-    </div>        
+            <TodoList />
+            <TodoListItem />
+        </div>        
     );
 };
 
-// const el = <App />;
-
-// const el = React.createElement('h1', null, 'Hello world epta');
-
-// ReactDOM.render(el, document.getElementById('root'));
 ReactDOM.render(<App />, document.getElementById('root'));
