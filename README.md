@@ -1,2 +1,2 @@
 # to_do_list
-to-do lint JS + NodeJS + HTML
+to-do list JS + NodeJS + HTML
