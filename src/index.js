@@ -10,9 +10,9 @@ import TodoListItem from './components/todo-list-item';
 const App = () => {
 
     const todoDate = [
-        { label: 'Drink Coffee', important: false},
-        { label: 'make awesome app', important: true},
-        { label: 'Drink VODKA', important: true}
+        { label: 'Drink Coffee', important: false, id: 1},
+        { label: 'make awesome app', important: true, id: 2},
+        { label: 'Drink VODKA', important: true, id: 3}
     ];
     
     return (
