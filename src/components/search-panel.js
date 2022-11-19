@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './search-panel.css';
+
 const SearchPanel = () => {
     
     const SearchText = 'Type here to search text';
