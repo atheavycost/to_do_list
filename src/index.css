@@ -1,9 +1,11 @@
 .app-s {
-    border: 5px;
+    font-size: 20px;
+    margin: 50px;
+
 }
 
 .app-s h1 {
-    font-size: 50px;
+    font-size: 60px;
 }
 
 .app-s h2 {

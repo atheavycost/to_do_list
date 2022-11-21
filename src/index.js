@@ -1,11 +1,13 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
+
 import { createRoot } from 'react-dom/client';
 
 import AppHeader from './components/app-header';
-import SearchPanel from './components/search-panel';
-import TodoList from './components/todo-list';
-import TodoListItem from './components/todo-list-item';
+import SearchPanel from './components/search-panel/search-panel';
+import TodoList from './components/todo-list/todo-list';
+import TodoListItem from './components/todo-list-item/todo-list-item';
+
+import './index.css';
 
 const App = () => {
 
@@ -16,7 +18,7 @@ const App = () => {
     ];
     
     return (
-        <div>
+        <div className='app-s'>
             <AppHeader />
             <SearchPanel />
             <TodoList todos={todoDate} />
@@ -29,8 +31,3 @@ const container = document.getElementById('root');
 const root = createRoot(container);
 
 root.render(<App />);
-
-
-// ReactDOM.render(<App />, document.getElementById('root'));
-
-

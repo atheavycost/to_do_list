@@ -4,12 +4,12 @@ import './search-panel.css';
 
 const SearchPanel = () => {
     
-    const SearchText = 'Type here to search text';
+    const SearchText = 'Type here to search task';
     const searchStyle = {
         fontSize: '20px'
     };
     return ( 
-    <div>
+    <div className='search-input'>
     <input 
         style={searchStyle}
         placeholder={SearchText} />
