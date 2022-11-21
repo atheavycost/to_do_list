@@ -9,7 +9,7 @@ const SearchPanel = () => {
         fontSize: '20px'
     };
     return ( 
-    <div className='search-input'>
+    <div className='search-panel'>
     <input 
         style={searchStyle}
         placeholder={SearchText} />

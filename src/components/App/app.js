@@ -3,7 +3,7 @@ import React from 'react';
 import AppHeader from '../app-header';
 import SearchPanel from '../search-panel';
 import TodoList from '../todo-list/todo-list';
-import TodoListItem from '../todo-list-item';
+import ItemStatusFilter from '../item-status-filter';
 
 import './app.css';
 
@@ -16,11 +16,15 @@ const App = () => {
     ];
     
     return (
-        <div className='app-s'>
-            <AppHeader />
-            <SearchPanel />
-            <TodoList todos={todoDate} />
-            <TodoListItem />
+        <div className='todo-app'>
+            <AppHeader toDo={10} done={3}/>
+            <div className='search-panel d-flex'>
+                <SearchPanel />
+                <ItemStatusFilter/>
+            </div>
+
+            <TodoList todos={todoDate} 
+            onDeleted={(id) => console.log('deleted', id)}/>
         </div>        
     );
 };
