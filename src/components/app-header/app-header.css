@@ -1,18 +1,20 @@
 .app-header {
-    align-items: flex-end;
+    /* align-items: flex-end; */
     color:blueviolet;
     margin: 10px;
+    /* font-size: 10px; */
 
 
 }
 
 .app-header h1 {
     flex-grow: 1;
-    /* color: red; */
+    /* color: black; */
 
 }
 
 .app-header h2 {
-    font-size: 1.2rem;
-    color: black
+    font-size: 5px;
+    color: red;
+    
 }
