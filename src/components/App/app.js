@@ -59,33 +59,62 @@ export default class App extends Component {
        
     };
 
+    toggleProperty = (arr, id, propName) => {
+        const idx = arr.findIndex((el) => el.id === id);
+
+        const oldItem = arr[idx];
+        const newItem = {
+                        ...oldItem, 
+                        [propName]: !oldItem[propName] };    
+        return [    
+            ...arr.slice(0, idx), 
+            newItem,
+            ...arr.slice(idx + 1)
+        ];
+    
+    };
+
     OnToggleImportant = (id) => {
-        console.log('Toggle important', id)
+        this.setState(({todoData}) => {
+            return {
+                todoData: this.toggleProperty(todoData, id, 'important')
+            };
+        });
     };
     
     OnToggleDone = (id) => {
-        console.log('Toggle done', id);
+        this.setState(({todoData}) => {
+            return {
+                todoData: this.toggleProperty(todoData, id, 'done')
+            };
+        });
     };
 
     render() {
+
+        const {todoData} = this.state;
+
+        const doneCount = todoData.filter((el) => el.done).length;
+        const todoCount = todoData.length - doneCount;
+
         return (
             <div className='todo-app'>
-                <AppHeader toDo={10} done={3}/>
-                <div className='search-panel d-flex'>
+                <AppHeader toDo={todoCount} done={doneCount}/>
+                <div className='top-panel d-flex'>
                     <SearchPanel />
                     <ItemStatusFilter/>
                 </div>
     
                 <TodoList 
 
-                todos={this.state.todoData} 
+                todos={todoData} 
                 onDeleted={this.deletItem}
                 OnToggleImportant={this.OnToggleImportant}
                 OnToggleDone={this.OnToggleDone}/>
 
-                <div>
+                
                     <ItemAddForm onItemAdded={this.addItem}/>
-                </div>
+                
                 
             </div>        
         );
