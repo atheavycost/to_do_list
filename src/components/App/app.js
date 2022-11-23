@@ -14,12 +14,20 @@ export default class App extends Component {
 
     state = {
         todoData: [
-            { label: 'Drink Coffee', important: false, id: 1},
-            { label: 'make awesome app', important: true, id: 2},
-            { label: 'Drink VODKA', important: true, id: 3}
+            this.createTodoItem('Drink coffee'),
+            this.createTodoItem('Drink VODKA'),
+            this.createTodoItem('Make awesome app')
         ]
-        
-    }
+    };
+
+    createTodoItem(label) {
+        return {
+            label,
+            important: false,
+            done: false,
+            id: this.maxId++
+        };
+    };
 
     deletItem = (id) => {
         this.setState(({todoData}) => {
@@ -36,11 +44,7 @@ export default class App extends Component {
     };
     
     addItem = (text) => {
-        const newItem = {
-            label: text,
-            important: false,
-            id: this.maxId++
-        };
+        const newItem = this.createTodoItem(text);
 
         this.setState(({todoData}) => {
             const newArr = [
@@ -55,6 +59,14 @@ export default class App extends Component {
        
     };
 
+    OnToggleImportant = (id) => {
+        console.log('Toggle important', id)
+    };
+    
+    OnToggleDone = (id) => {
+        console.log('Toggle done', id);
+    };
+
     render() {
         return (
             <div className='todo-app'>
@@ -65,9 +77,12 @@ export default class App extends Component {
                 </div>
     
                 <TodoList 
-                // className='todo-list'
+
                 todos={this.state.todoData} 
-                onDeleted={this.deletItem}/>
+                onDeleted={this.deletItem}
+                OnToggleImportant={this.OnToggleImportant}
+                OnToggleDone={this.OnToggleDone}/>
+
                 <div>
                     <ItemAddForm onItemAdded={this.addItem}/>
                 </div>
