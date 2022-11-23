@@ -28,7 +28,7 @@ export default class TodoListItem extends Component {
         
                 <button type='button'
                         className='btn btn-out-line-success btn-sm float-right'
-                        onClick={onToggleImportant}>
+                        onClick={ onToggleImportant }>
                     <li className='fa fa-exclamation' />
                 </button>
         
