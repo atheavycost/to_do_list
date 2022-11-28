@@ -66,15 +66,15 @@ export default class App extends Component {
         const newItem = {
                         ...oldItem, 
                         [propName]: !oldItem[propName] };    
-        return [    
+        return ([    
             ...arr.slice(0, idx), 
             newItem,
             ...arr.slice(idx + 1)
-        ];
+        ]);
     
     };
 
-    OnToggleImportant = (id) => {
+    onToggleImportant = (id) => {
         this.setState(({todoData}) => {
             return {
                 todoData: this.toggleProperty(todoData, id, 'important')
@@ -82,7 +82,7 @@ export default class App extends Component {
         });
     };
     
-    OnToggleDone = (id) => {
+    onToggleDone = (id) => {
         this.setState(({todoData}) => {
             return {
                 todoData: this.toggleProperty(todoData, id, 'done')
@@ -109,11 +109,11 @@ export default class App extends Component {
 
                 todos={todoData} 
                 onDeleted={this.deletItem}
-                OnToggleImportant={this.OnToggleImportant}
-                OnToggleDone={this.OnToggleDone}/>
+                onToggleImportant={this.onToggleImportant}
+                onToggleDone={this.onToggleDone}/>
 
                 
-                    <ItemAddForm onItemAdded={this.addItem}/>
+                <ItemAddForm onItemAdded={this.addItem}/>
                 
                 
             </div>        

@@ -1,8 +1,7 @@
 import React from 'react';
 
-import TodoListItem from '../todo-list-item'
+import TodoListItem from '../todo-list-item';
 import './todo-list.css';
-
 
 const TodoList = ({
                     todos, 
@@ -16,15 +15,17 @@ const TodoList = ({
         return(
             <li key={id} className='list-group-item'>
                 <TodoListItem {...itemProps}
-                onDeleted={() => onDeleted(id)}
-                onToggleImportant={() => onToggleImportant(id)}
-                onToggleDone={() => onToggleDone(id)}/>
+                
+                    onToggleImportant={() => onToggleImportant(id)}
+                    onToggleDone={() => onToggleDone(id)}
+                    onDeleted={() => onDeleted(id)}/>
+      
             </li>
         );
     });
 
     return (        
-    <ul className='list-group-item todo-list'>
+    <ul className='todo-list'>
         {elements}
     </ul>
     );

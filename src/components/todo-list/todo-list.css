@@ -1,12 +1,25 @@
-.todo-list .list-group-item {
-    /* border-radius: 30px; */
-    /* width: 460px; */
-    background-color: rgb(201, 97, 145);
+/* .todo-list .list-group-item {
+    border-radius: 30px;
+    width: 460px;
+    background-color: rgb(76, 196, 92);
     margin-left: 10px;
     margin-right: 10px;
     margin-top: 2px;
     margin-bottom: 2px;
-    border-color: rgb(54, 151, 83);
-    border-width: 10px;
+    border-color: rgb(15, 15, 15);
   
+} */
+
+.todo-list-item-label .list-group-item {
+    margin-left: 1.25rem;
+    line-height: 35px;
+    cursor: pointer;
+    user-select: none;
+}
+.todo-list-item.done .todo-list-item-label {
+    text-decoration: line-through;
+}
+.todo-list-item.important .todo-list-item-label {
+    font-weight: bold;
+    color: steelblue;
 }
