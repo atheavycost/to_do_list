@@ -11,7 +11,7 @@ export default class ItemAddForm extends Component {
 
     onLabelChange = (e) => {
         this.setState({
-            label: e.target.value.toUpperCase()
+            label: e.target.value
         });
     };
 
